@@ -11,7 +11,7 @@ defmodule PlateSlate.Seeds do
       %Menu.ItemTag{name: "Vegetarian"}
       |> Repo.insert!
 
-    _vegan =
+    vegan =
       %Menu.ItemTag{name: "Vegan"}
       |> Repo.insert!
 
@@ -52,7 +52,7 @@ defmodule PlateSlate.Seeds do
     sides = %Menu.Category{name: "Sides"} |> Repo.insert!
 
     _fries =
-      %Menu.Item{name: "French Fries", price: 2.50, category: sides}
+      %Menu.Item{name: "French Fries", price: 2.50, category: sides, tags: [vegan]}
       |> Repo.insert!
 
     _papadum =
@@ -62,6 +62,10 @@ defmodule PlateSlate.Seeds do
     _pasta_salad =
       %Menu.Item{name: "Pasta Salad", price: 2.50, category: sides}
       |> Repo.insert!
+
+    _big_tasty =
+      %Menu.Item{ name: "Big Tasty", added_on: ~D[2021-08-01], price: 2.55, category: sides }
+      |> Repo.insert!()
 
     #
     # BEVERAGES
