@@ -3,6 +3,8 @@ defmodule PlateSlateWeb.Schema do
   alias PlateSlate.Menu
   alias PlateSlateWeb.Resolvers
 
+  import_types __MODULE__.MenuTypes
+
   scalar :date do
     parse(fn input ->
       with %Absinthe.Blueprint.Input.String{value: value} <- input,
